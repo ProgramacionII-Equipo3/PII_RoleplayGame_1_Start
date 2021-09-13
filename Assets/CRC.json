@@ -1,6 +1,32 @@
 [
 	{
-	  "name": "Item",
+	  "name": "MagicWand",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its attack value",
+		"Store its defense value"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	},
+	{
+	  "name": "SpellBook",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its attack value",
+		"Store its defense value"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	},
+	{
+	  "name": "Sword",
 	  "superclasses": "",
 	  "subclasses": "",
 	  "type": 1,
@@ -21,7 +47,10 @@
 		"Store the magic wand it possesses, if it does",
 		"Store the spell book it possesses, if it does",
 		"Store its orientation and level of magic",
-		"Improve its level of magic"
+		"Improve its level of magic",
+		"Store its maximum and current vitality",
+		"Reduce vitality when receiving damage",
+		"Increase vitality when healing"
 	  ],
 	  "collaborators": [
 		"Item"
@@ -34,7 +63,10 @@
 	  "type": 1,
 	  "responsibilities": [
 		"Store its level of magic",
-		"Store the weapon (magic wand of physical weapon) it possesses, if it does"
+		"Store the physical weapon it possesses, if it does",
+		"Store its maximum and current vitality",
+		"Reduce vitality when receiving damage",
+		"Increase vitality when healing"
 	  ],
 	  "collaborators": [
 		"Item"
@@ -48,7 +80,10 @@
 	  "responsibilities": [
 		"Store its strength",
 		"Store its physical resistance",
-		"Store the physical weapon it possesses, if it does"
+		"Store the physical weapon it possesses, if it does",
+		"Store its maximum and current vitality",
+		"Reduce vitality when receiving damage",
+		"Increase vitality when healing"
 	  ],
 	  "collaborators": [
 		"Item"
