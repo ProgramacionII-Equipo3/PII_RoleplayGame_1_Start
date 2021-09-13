@@ -57,6 +57,7 @@
 	  "subclasses": "",
 	  "type": 1,
 	  "responsibilities": [
+		"Store its name",
 		"Store the magic wand it possesses, if it does",
 		"Store the spell book it possesses, if it does",
 		"Store its orientation and level of magic",
@@ -76,6 +77,7 @@
 	  "subclasses": "",
 	  "type": 1,
 	  "responsibilities": [
+		"Store its name",
 		"Store its level of magic",
 		"Store the physical weapon it possesses, if it does",
 		"Store its maximum and current vitality",
@@ -92,6 +94,7 @@
 	  "subclasses": "",
 	  "type": 1,
 	  "responsibilities": [
+		"Store its name",
 		"Store its strength",
 		"Store its physical resistance",
 		"Store the physical weapon it possesses, if it does",
