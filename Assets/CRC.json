@@ -1,0 +1,57 @@
+[
+	{
+	  "name": "Item",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its attack value",
+		"Store its defense value"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	},
+	{
+	  "name": "Wizard",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store the magic wand it possesses, if it does",
+		"Store the spell book it possesses, if it does",
+		"Store its orientation and level of magic",
+		"Improve its level of magic"
+	  ],
+	  "collaborators": [
+		"Item"
+	  ]
+	},
+	{
+	  "name": "Elf",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its level of magic",
+		"Store the weapon (magic wand of physical weapon) it possesses, if it does"
+	  ],
+	  "collaborators": [
+		"Item"
+	  ]
+	},
+	{
+	  "name": "Dwarf",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its strength",
+		"Store its physical resistance",
+		"Store the physical weapon it possesses, if it does"
+	  ],
+	  "collaborators": [
+		"Item"
+	  ]
+	}
+  ]
