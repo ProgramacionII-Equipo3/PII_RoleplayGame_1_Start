@@ -122,5 +122,32 @@
 		  "Hammer",
 		  "HeavyArmour"
 	  ]
+	},
+	{
+	   "name": "Hammer",
+	   "superclasses": "",
+	   "subclasses": "",
+	   "type": 1,
+	   "responsibilities": [
+		   "Store its attack value",
+		   "Store its defense value"
+	   ],
+	   "collaborators":[
+
+	   ]
+	},
+	{
+		"name": "HeavyArmor",
+		"superclasses": "",
+		"subclasses": "",
+		"type": 1,
+		"responsibilities": [
+			"Store its attack value",
+			"Store its defense value"
+		],
+		"collaborators":[
+ 
+		]	
 	}
   ]
+  
