@@ -105,5 +105,22 @@
 	  "collaborators": [
 		"Sword"
 	  ]
+	},
+	{
+	  "name": "Giant",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		  "Store its name",
+		  "Store its maximun and current vitality",
+		  "Reduce vitality when receiving damage",
+		  "Increase armor when have an armour",
+		  "Store the physical weapon it possesses, if it does"
+	  ],
+	  "collaborators":[
+		  "Hammer",
+		  "HeavyArmour"
+	  ]
 	}
   ]
