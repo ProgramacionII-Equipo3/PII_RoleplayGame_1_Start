@@ -52,6 +52,67 @@
 	  ]
 	},
 	{
+	  "name": "Shield",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its attack value",
+		"Store its defense value"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	},
+	{
+	  "name": "Helmet",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its attack value",
+		"Store its defense value",
+		"Store its endurance (how much many attacks it will endure before breaking)",
+		"Reduce its endurance",
+		"Calculate whether it's broken"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	},
+	{
+	  "name": "Hammer",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its attack value",
+		"Store its defense value",
+		"Store its endurance (how much many attacks it will endure before breaking)",
+		"Reduce its endurance",
+		"Calculate whether it's broken"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	},
+	{
+	  "name": "HeavyArmor",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its attack value",
+		"Store its defense value",
+		"Store its endurance (how much many attacks it will endure before breaking)",
+		"Reduce its endurance",
+		"Calculate whether it's broken"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	},
+	{
 	  "name": "Wizard",
 	  "superclasses": "",
 	  "subclasses": "",
