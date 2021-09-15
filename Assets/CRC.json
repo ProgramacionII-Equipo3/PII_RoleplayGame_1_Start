@@ -1,0 +1,187 @@
+[
+	{
+	  "name": "MagicWand",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its attack value",
+		"Store its defense value"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	},
+	{
+	  "name": "SpellBook",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its attack value",
+		"Store its defense value"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	},
+	{
+	  "name": "Sword",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its attack value",
+		"Store its defense value"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	},
+	{
+	  "name": "Axe",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its attack value",
+		"Store its defense value"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	},
+	{
+	  "name": "Shield",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its attack value",
+		"Store its defense value",
+		"Store its endurance (how much many attacks it will endure before breaking)",
+		"Reduce its endurance",
+		"Calculate whether it's broken"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	},
+	{
+	  "name": "Helmet",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its attack value",
+		"Store its defense value"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	},
+	{
+	  "name": "Hammer",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its attack value",
+		"Store its defense value",
+		"Store its endurance (how much many attacks it will endure before breaking)",
+		"Reduce its endurance",
+		"Calculate whether it's broken"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	},
+	{
+	  "name": "HeavyArmor",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its attack value",
+		"Store its defense value",
+		"Store its endurance (how much many attacks it will endure before breaking)",
+		"Reduce its endurance",
+		"Calculate whether it's broken"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	},
+	{
+	  "name": "Wizard",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its name",
+		"Store and modify the magic wand it possesses, if it does",
+		"Store and modify the spell book it possesses, if it does",
+		"Store its orientation and level of magic",
+		"Improve its level of magic",
+		"Store its maximum vitality ",
+		"Store and modify its current vitality"
+	  ],
+	  "collaborators": [
+		"MagicWand",
+		"SpellBook"
+	  ]
+	},
+	{
+	  "name": "Elf",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its name",
+		"Store its level of magic",
+		"Store and modify the sword it possesses, if it does",
+		"Store and modify the helmet it possesses, if it does",
+		"Store its maximum vitality",
+		"Store and modify its current vitality"
+	  ],
+	  "collaborators": [
+		"Sword",
+		"Helmet"
+	  ]
+	},
+	{
+	  "name": "Dwarf",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its name",
+		"Store its strength",
+		"Store its physical resistance",
+		"Store and modify the shield it possesses, if it does",
+		"Store and modify the axe it possesses, if it does",
+		"Store its maximum vitality",
+		"Store and modify its current vitality"
+	  ],
+	  "collaborators": [
+		"Shield",
+		"Axe"
+	  ]
+	},
+	{
+	  "name": "Giant",
+	  "superclasses": "",
+	  "subclasses": "",
+	  "type": 1,
+	  "responsibilities": [
+		"Store its name",
+		"Store and modify the hammer it possesses, if it does",
+		"Store and modify the armor it possesses, if it does",
+		"Store its maximum vitality",
+		"Store and modify its current vitality"
+	  ],
+	  "collaborators": [
+		""
+	  ]
+	}
+  ]
