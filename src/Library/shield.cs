@@ -8,9 +8,9 @@ namespace Library
 
         public Shield() 
         {
-            this.attack = attack;
-            this.defense = defense;
-            this.endurance = endurance;
+            this.attack = 2;
+            this.defense = 10;
+            this.endurance = 20;
         }
     }
 }

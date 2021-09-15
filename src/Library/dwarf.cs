@@ -7,30 +7,24 @@ namespace Library
     {
         private string name;
         private uint maxVit;
-        private uint currenVit
+        private uint currentVit;
         private ushort strength;
-        private bool axe;
-        private bool shield
+        public static Axe axe;
+        public static Shield shield;
 
         public string Name { get; set; }
-        public string MaxVit { get; set; }
-        public string CurrentVit { get; set; }
-        public string Strength { get; set; }
-        public Dwarf(string name)
+        public uint MaxVit { get; set; }
+        public uint CurrentVit { get; set; }
+        public ushort Strength { get; set; }
+
+        public Dwarf(string name, ushort strength)
         {
             this.Name = name;
+            this.Strength = strength;
             this.MaxVit = 100;
             this.CurrentVit = 100;
-            this.Strength = strength;
         }
 
-        public useAxe()
-        {
-            this.item.add();
-        }
-        public useShield()
-        {
-            this.item.add();
-        }
+
     }
 }
