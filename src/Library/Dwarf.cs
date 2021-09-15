@@ -50,7 +50,6 @@ namespace Library
         /// <summary>
         /// The dwarf's weapon (an axe)
         /// </summary>
-        /// <value></value>
         public Axe Weapon { get; set; } = null;
 
         public Dwarf(string name, uint maxVit, ushort strength, ushort defense)
