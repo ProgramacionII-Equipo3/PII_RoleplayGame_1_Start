@@ -5,9 +5,10 @@ namespace Library
     public class Elf
     {
         public string Name;
-        private byte MagicLevel;
+        public byte MagicLevel {get; private set;}
         public uint CurrentVit {get; private set;}
         public uint MaxVit {get; private set;}
+
 
         public Elf (string name, byte magicLevel)
         {
@@ -18,26 +19,4 @@ namespace Library
         }
 
     }
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
