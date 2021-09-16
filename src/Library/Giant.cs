@@ -12,9 +12,9 @@ namespace Character
         public bool Hammer;
         public bool Armor;
 
-        public Giant()
+        public Giant(string name)
         {
-            this.Name = "Giant";
+            this.Name = name;
             this.Damage = 40;
             this.CurrentVit = 150;
             this.Hammer = false;

@@ -11,9 +11,9 @@ namespace ArmorVest
         public uint ArmorLife;
         public bool IsArmorBroken;
 
-        public HeavyArmor()
+        public HeavyArmor(string name)
         {
-            this.Name = "Heavy Armour";
+            this.Name = name;
             this.ArmorDamage = 0;
             this.ArmorDefense = 150;
             this.ArmorLife = 100;

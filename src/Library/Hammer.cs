@@ -11,9 +11,9 @@ namespace HammerItem
         private bool IsBroken;
 
     
-        public Hammer()
+        public Hammer(string name)
         {
-            this.Name = "Hammer";
+            this.Name = name;
             this.HammerDamage = 40;
             this.HammerLife = 100;
             this.IsBroken = false;
