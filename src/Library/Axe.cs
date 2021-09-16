@@ -19,6 +19,8 @@ namespace Library
 
         public Axe(int attack, int defense)
         {
+            Utils.CheckNull(attack, "attack");
+            Utils.CheckNull(defense, "defense");
             this.Attack = attack;
             this.Defense = defense;
         }
