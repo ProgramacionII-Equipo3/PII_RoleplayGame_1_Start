@@ -4,13 +4,13 @@ namespace Library
 {
     public class Helmet
     {
-        public byte Attack;
-        public byte Defense;
+        public ushort Attack{get;}
+        public ushort Defense{get;}
 
         public Helmet()
         {
-            this.Attack=3;
-            this.Defense=25;           
+            this.Attack=5;
+            this.Defense=30;           
         }
 
 

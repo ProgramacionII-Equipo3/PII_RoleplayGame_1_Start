@@ -4,8 +4,8 @@ namespace Library
 {
     public class Sword
     {
-        public byte Attack;
-        public byte Defense;
+        public byte Attack{get;}
+        public byte Defense{get;}
 
         public Sword()
         {
