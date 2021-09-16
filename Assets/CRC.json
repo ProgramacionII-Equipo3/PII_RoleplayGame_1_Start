@@ -124,8 +124,8 @@
 		"Store and modify the spell book it possesses, if it does",
 		"Store its orientation and level of magic",
 		"Improve its level of magic",
-		"Store its maximum vitality ",
-		"Store and modify its current vitality"
+		"Store its maximum and current vitality",
+		"Receive damage and heal"
 	  ],
 	  "collaborators": [
 		"MagicWand",
@@ -143,8 +143,8 @@
 		"Store its level of magic",
 		"Store and modify the sword it possesses, if it does",
 		"Store and modify the helmet it possesses, if it does",
-		"Store its maximum vitality",
-		"Store and modify its current vitality"
+		"Store its maximum and current vitality",
+		"Receive damage and heal"
 	  ],
 	  "collaborators": [
 		"Sword",
@@ -163,8 +163,8 @@
 		"Calculate its net strength and defense",
 		"Store and modify the shield it possesses, if it does",
 		"Store and modify the axe it possesses, if it does",
-		"Store its maximum vitality",
-		"Store and modify its current vitality"
+		"Store its maximum and current vitality",
+		"Receive damage and heal"
 	  ],
 	  "collaborators": [
 		"Shield",
@@ -181,9 +181,9 @@
 		"Calculate its net strength and defense",
 		"Store and modify the hammer it possesses, if it does",
 		"Store and modify the armor it possesses, if it does",
-		"Store its maximum vitality",
-		"Store and modify its current vitality"
-	  ],
+		"Store its maximum and current vitality",
+		"Receive damage and heal"
+  ],
 	  "collaborators": [
 		""
 	  ]

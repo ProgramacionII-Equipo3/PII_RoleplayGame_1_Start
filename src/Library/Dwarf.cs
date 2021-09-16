@@ -79,7 +79,7 @@ namespace Library
         }
 
         /// <summary>
-        /// Modifies the dwarf's vitality and equipment's durability based on the received attack.
+        /// Reduces the dwarf's vitality and equipment's durability based on the received attack.
         /// </summary>
         /// <param name="netAttack">The net attack of the oponent.</param>
         public void ReceiveAttack(int netAttack)
@@ -87,6 +87,16 @@ namespace Library
             CurrentVit -= Utils.CalcDamage(netAttack, NetDefense);
             if(Shield is Shield shield)
                 shield.ReceiveAttack();
+        }
+
+        /// <summary>
+        /// Heals the dwarf.
+        /// </summary>
+        /// <param name="healedVit">The amount of healing.</param>
+        public void Heal(int healedVit)
+        {
+            if(healedVit < 0) return;
+            CurrentVit += healedVit;
         }
     }
 }

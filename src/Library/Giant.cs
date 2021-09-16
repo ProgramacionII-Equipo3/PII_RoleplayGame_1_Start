@@ -65,7 +65,7 @@ namespace Library
         }
         
         /// <summary>
-        /// Modifies the giant's vitality based on the received attack.
+        /// Reduces the giant's vitality based on the received attack.
         /// </summary>
         /// <param name="netAttack">The net attack of the oponent.</param>
         public void ReceiveAttack(int netAttack)
@@ -73,6 +73,16 @@ namespace Library
             CurrentVit -= Utils.CalcDamage(netAttack, NetDefense);
             if(Weapon is Hammer hammer) hammer.ReceiveAttack();
             if(Vest is HeavyArmor armor) armor.ReceiveAttack();
+        }
+
+        /// <summary>
+        /// Heals the giant.
+        /// </summary>
+        /// <param name="healedVit">The amount of healing.</param>
+        public void Heal(int healedVit)
+        {
+            if(healedVit < 0) return;
+            CurrentVit += healedVit;
         }
     }
 }

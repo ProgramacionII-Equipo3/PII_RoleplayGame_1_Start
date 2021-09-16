@@ -79,7 +79,7 @@ namespace Library
         }
         
         /// <summary>
-        /// Modifies the wizard's vitality based on the received attack.
+        /// Reduces the wizard's vitality based on the received attack.
         /// </summary>
         /// <param name="netAttack">The net attack of the oponent.</param>
         public void ReceiveAttack(int netAttack)
@@ -93,6 +93,16 @@ namespace Library
         public void IncreaseMagicLevel()
         {
             MagicLevel++;
+        }
+
+        /// <summary>
+        /// Heals the wizard.
+        /// </summary>
+        /// <param name="healedVit">The amount of healing.</param>
+        public void Heal(int healedVit)
+        {
+            if(healedVit < 0) return;
+            CurrentVit += healedVit;
         }
     }
 }
