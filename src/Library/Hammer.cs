@@ -3,27 +3,32 @@ using System;
 namespace Library
 {
     /// <summary>
-    /// This class represents a hammer
+    /// This class represents a hammer.
     /// </summary>
     public class Hammer
     {
         /// <summary>
-        /// The attack value of the hammer
+        /// The attack value of the hammer.
         /// </summary>
         public int Attack { get; }
 
         /// <summary>
-        /// The defense value of the hammer
+        /// The defense value of the hammer.
         /// </summary>
         public int Defense { get; }
 
         /// <summary>
-        /// The life of the hammer
+        /// The raw stat of the life of the hammer.
         /// </summary>
-        public int HammerLife { get; }
+        private int hammerLife;
 
         /// <summary>
-        /// Whether the hammer is broken or not
+        /// The life of the hammer.
+        /// </summary>
+        public int HammerLife { get => IsBroken ? 0 : hammerLife; }
+
+        /// <summary>
+        /// Whether the hammer is broken or not.
         /// </summary>
         public bool IsBroken { get => HammerLife == 0; }
 
@@ -34,7 +39,12 @@ namespace Library
             Utils.CheckPositive(hammerLife, "hammerLife");
             this.Attack = attack;
             this.Defense = defense;
-            this.HammerLife = hammerLife;
+            this.hammerLife = hammerLife;
+        }
+
+        public void ReceiveAttack()
+        {
+            if (!IsBroken) hammerLife--;
         }
     }
 }

@@ -3,17 +3,17 @@ using System;
 namespace Library
 {
     /// <summary>
-    /// This class represents a helmet
+    /// This class represents a helmet.
     /// </summary>
     public class Helmet
     {
         /// <summary>
-        /// The attack value of the helmet
+        /// The attack value of the helmet.
         /// </summary>
         public int Attack { get; }
 
         /// <summary>
-        /// The defense value of the helmet
+        /// The defense value of the helmet.
         /// </summary>
         public int Defense { get; }
 

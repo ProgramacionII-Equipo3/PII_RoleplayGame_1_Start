@@ -18,9 +18,22 @@ namespace Library
         public int MaxVit { get; }
 
         /// <summary>
+        /// The raw stat of the current vitality.
+        /// </summary>
+        private int currentVit;
+
+        /// <summary>
         /// The current vitality of the dwarf.
         /// </summary>
-        public int CurrentVit { get; private set; }
+        public int CurrentVit {
+            get => currentVit;
+            set
+            {
+                if (value >= MaxVit) value = MaxVit;
+                else if(value < 0) value = 0;
+                currentVit = value;
+            }
+        }
 
         /// <summary>
         /// The innate strength of the dwarf.
@@ -43,12 +56,12 @@ namespace Library
         public int NetDefense { get => this.GrossDefense + this.Shield.Defense + this.Weapon.Defense; }
 
         /// <summary>
-        /// The dwarf's shield
+        /// The dwarf's shield.
         /// </summary>
         public Shield Shield { get; set; } = null;
 
         /// <summary>
-        /// The dwarf's weapon (an axe)
+        /// The dwarf's weapon (an axe).
         /// </summary>
         public Axe Weapon { get; set; } = null;
 
@@ -60,7 +73,7 @@ namespace Library
             Utils.CheckPositive(defense, "defense");
 
             this.Name = name;
-            this.MaxVit = this.CurrentVit = maxVit;
+            this.MaxVit = this.currentVit = maxVit;
             this.GrossStrength = strength;
             this.GrossDefense = defense;
         }
