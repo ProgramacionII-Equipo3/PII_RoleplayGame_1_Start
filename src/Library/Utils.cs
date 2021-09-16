@@ -21,11 +21,11 @@ namespace Library
         /// </summary>
         /// <param name="value">The given value</param>
         /// <param name="paramName">The argument name, to pass it to the exception.</param>
-        /// <typeparam name="T">The type of the given value</typeparam>
-        /// <exception cref="ArgumentNullException">The given value is null</exception>
-        public static void CheckNull<T>(T value, string paramName)
+        /// <typeparam name="T">The type of the given value.</typeparam>
+        /// <exception cref="ArgumentOutOfRangeException">The given value is negative.</exception>
+        public static void CheckPositive(int value, string paramName)
         {
-            if(value == null) throw new ArgumentNullException(paramName);
+            if(value < 0) throw new ArgumentOutOfRangeException(paramName);
         }
         
         /// <summary>

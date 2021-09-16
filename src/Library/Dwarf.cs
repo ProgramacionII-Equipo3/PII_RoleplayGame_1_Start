@@ -40,7 +40,7 @@ namespace Library
         /// <summary>
         /// The defense of the dwarf, counting innate defense and equipment.
         /// </summary>
-        public int NetDefense { get => this.GrossDefense; }
+        public int NetDefense { get => this.GrossDefense + this.Shield.Defense + this.Weapon.Defense; }
 
         /// <summary>
         /// The dwarf's shield
@@ -55,9 +55,9 @@ namespace Library
         public Dwarf(string name, int maxVit, int strength, int defense)
         {
             Utils.CheckString(name, "name");
-            Utils.CheckNull(maxVit, "maxVit");
-            Utils.CheckNull(strength, "strength");
-            Utils.CheckNull(defense, "defense");
+            Utils.CheckPositive(maxVit, "maxVit");
+            Utils.CheckPositive(strength, "strength");
+            Utils.CheckPositive(defense, "defense");
 
             this.Name = name;
             this.MaxVit = this.CurrentVit = maxVit;

@@ -29,9 +29,9 @@ namespace Library
 
         public HeavyArmor(int attack, int defense, int armorLife)
         {
-            Utils.CheckNull(attack, "attack");
-            Utils.CheckNull(defense, "defense");
-            Utils.CheckNull(armorLife, "armorLife");
+            Utils.CheckPositive(attack, "attack");
+            Utils.CheckPositive(defense, "defense");
+            Utils.CheckPositive(armorLife, "armorLife");
             this.Attack = attack;
             this.Defense = defense;
             this.ArmorLife = armorLife;

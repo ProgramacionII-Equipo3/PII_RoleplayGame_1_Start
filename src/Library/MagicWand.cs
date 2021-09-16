@@ -3,21 +3,21 @@ using System;
 namespace Library
 {
     /// <summary>
-    /// This class represents a helmet
+    /// This class represents an axe
     /// </summary>
-    public class Helmet
+    public class MagicWand
     {
         /// <summary>
-        /// The attack value of the helmet
+        /// The attack value of the axe
         /// </summary>
         public int Attack { get; }
 
         /// <summary>
-        /// The defense value of the helmet
+        /// The defense value of the axe
         /// </summary>
         public int Defense { get; }
 
-        public Helmet(int attack, int defense)
+        public MagicWand(int attack, int defense)
         {
             Utils.CheckPositive(attack, "attack");
             Utils.CheckPositive(defense, "defense");

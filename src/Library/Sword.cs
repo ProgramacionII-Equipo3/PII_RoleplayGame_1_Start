@@ -19,8 +19,8 @@ namespace Library
 
         public Sword(int attack, int defense)
         {
-            Utils.CheckNull(attack, "attack");
-            Utils.CheckNull(defense, "defense");
+            Utils.CheckPositive(attack, "attack");
+            Utils.CheckPositive(defense, "defense");
             this.Attack = attack;
             this.Defense = defense;
         }

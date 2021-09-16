@@ -29,9 +29,9 @@ namespace Library
 
         public Shield(int attack, int defense, int endurance)
         {
-            Utils.CheckNull(attack, "attack");
-            Utils.CheckNull(defense, "defense");
-            Utils.CheckNull(endurance, "endurance");
+            Utils.CheckPositive(attack, "attack");
+            Utils.CheckPositive(defense, "defense");
+            Utils.CheckPositive(endurance, "endurance");
             this.Attack = attack;
             this.Defense = defense;
             this.Endurance = endurance;

@@ -29,9 +29,9 @@ namespace Library
 
         public Hammer(int attack, int defense, int hammerLife)
         {
-            Utils.CheckNull(attack, "attack");
-            Utils.CheckNull(defense, "defense");
-            Utils.CheckNull(hammerLife, "hammerLife");
+            Utils.CheckPositive(attack, "attack");
+            Utils.CheckPositive(defense, "defense");
+            Utils.CheckPositive(hammerLife, "hammerLife");
             this.Attack = attack;
             this.Defense = defense;
             this.HammerLife = hammerLife;
