@@ -9,7 +9,7 @@ namespace Library
         /// </summary>
         /// <param name="attack">The net attack of the active character.</param>
         /// <param name="defense">The net defense of the passive character.</param>
-        /// <returns></returns>
+        /// <returns>The calculated amount of damage.</returns>
         public static int CalcDamage(int attack, int defense)
         {
             int r = attack - defense;
@@ -17,7 +17,7 @@ namespace Library
         }
 
         /// <summary>
-        /// Checks if the given argument value is null, and throws an exception if it is.
+        /// Checks if the given argument value is positive or zero, and throws an exception if it is.
         /// </summary>
         /// <param name="value">The given value</param>
         /// <param name="paramName">The argument name, to pass it to the exception.</param>
