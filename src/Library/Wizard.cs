@@ -84,7 +84,7 @@ namespace Library
         /// <param name="netAttack">The net attack of the oponent.</param>
         public void ReceiveAttack(int netAttack)
         {
-            CurrentVit -= netAttack;
+            CurrentVit -= Utils.CalcDamage(netAttack, NetDefense);
         }
 
         /// <summary>

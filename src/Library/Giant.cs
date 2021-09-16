@@ -38,22 +38,22 @@ namespace Library
         /// <summary>
         /// The strength of the giant.
         /// </summary>
-        public int NetStrength { get => this.Hammer.Attack + this.Armor.Attack; }
+        public int NetStrength { get => this.Weapon.Attack + this.Vest.Attack; }
 
         /// <summary>
         /// The defense of the giant.
         /// </summary>
-        public int NetDefense { get => this.Hammer.Defense + this.Armor.Defense; }
+        public int NetDefense { get => this.Weapon.Defense + this.Vest.Defense; }
 
         /// <summary>
-        /// The giant's magic wand.
+        /// The giant's hammer.
         /// </summary>
-        public Hammer Hammer { get; set; } = null;
+        public Hammer Weapon { get; set; } = null;
 
         /// <summary>
-        /// The giant's spell book.
+        /// The giant's vest.
         /// </summary>
-        public HeavyArmor Armor { get; set; } = null;
+        public HeavyArmor Vest { get; set; } = null;
 
         public Giant(string name, int maxVit)
         {
@@ -70,7 +70,9 @@ namespace Library
         /// <param name="netAttack">The net attack of the oponent.</param>
         public void ReceiveAttack(int netAttack)
         {
-            CurrentVit -= netAttack;
+            CurrentVit -= Utils.CalcDamage(netAttack, NetDefense);
+            if(Weapon is Hammer hammer) hammer.ReceiveAttack();
+            if(Vest is HeavyArmor armor) armor.ReceiveAttack();
         }
     }
 }
