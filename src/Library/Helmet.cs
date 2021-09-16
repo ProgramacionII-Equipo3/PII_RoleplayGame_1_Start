@@ -10,14 +10,14 @@ namespace Library
         /// <summary>
         /// The attack value of the helmet
         /// </summary>
-        public ushort Attack { get; }
+        public int Attack { get; }
 
         /// <summary>
         /// The defense value of the helmet
         /// </summary>
-        public ushort Defense { get; }
+        public int Defense { get; }
 
-        public Helmet(ushort attack, ushort defense)
+        public Helmet(int attack, int defense)
         {
             this.Attack = attack;
             this.Defense = defense;

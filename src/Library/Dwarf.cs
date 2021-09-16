@@ -15,32 +15,32 @@ namespace Library
         /// <summary>
         /// The maximum vitality of the dwarf.
         /// </summary>
-        public uint MaxVit { get; }
+        public int MaxVit { get; }
 
         /// <summary>
         /// The current vitality of the dwarf.
         /// </summary>
-        public uint CurrentVit { get; private set; }
+        public int CurrentVit { get; private set; }
 
         /// <summary>
         /// The innate strength of the dwarf.
         /// </summary>
-        private ushort strength;
+        public int GrossStrength { get; private set; }
 
         /// <summary>
         /// The strength of the dwarf, counting innate strength and equipment.
         /// </summary>
-        public ushort Strength { get => this.strength; }
+        public int NetStrength { get => (int)(this.GrossStrength + this.Shield.Attack + this.Weapon.Attack); }
 
         /// <summary>
         /// The innate defense of the dwarf.
         /// </summary>
-        private ushort defense;
+        public int GrossDefense { get; private set; }
 
         /// <summary>
         /// The defense of the dwarf, counting innate defense and equipment.
         /// </summary>
-        public ushort Defense { get => this.defense; }
+        public int NetDefense { get => this.GrossDefense; }
 
         /// <summary>
         /// The dwarf's shield
@@ -50,15 +50,14 @@ namespace Library
         /// <summary>
         /// The dwarf's weapon (an axe)
         /// </summary>
-        /// <value></value>
         public Axe Weapon { get; set; } = null;
 
-        public Dwarf(string name, uint maxVit, ushort strength, ushort defense)
+        public Dwarf(string name, int maxVit, int strength, int defense)
         {
             this.Name = name;
             this.MaxVit = this.CurrentVit = maxVit;
-            this.strength = strength;
-            this.defense = defense;
+            this.GrossStrength = strength;
+            this.GrossDefense = defense;
         }
     }
 }

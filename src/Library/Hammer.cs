@@ -10,24 +10,24 @@ namespace Library
         /// <summary>
         /// The attack value of the hammer
         /// </summary>
-        public ushort Attack { get; }
+        public int Attack { get; }
 
         /// <summary>
         /// The defense value of the hammer
         /// </summary>
-        public ushort Defense { get; }
+        public int Defense { get; }
 
         /// <summary>
         /// The life of the hammer
         /// </summary>
-        public ushort HammerLife { get; }
+        public int HammerLife { get; }
 
         /// <summary>
         /// Whether the hammer is broken or not
         /// </summary>
         public bool IsBroken { get => HammerLife == 0; }
 
-        public Hammer(ushort attack, ushort defense, ushort hammerLife)
+        public Hammer(int attack, int defense, int hammerLife)
         {
             this.Attack = attack;
             this.Defense = defense;

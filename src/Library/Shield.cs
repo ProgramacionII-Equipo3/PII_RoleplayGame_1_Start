@@ -10,24 +10,24 @@ namespace Library
         /// <summary>
         /// The attack value of the shield
         /// </summary>
-        public ushort Attack { get; }
+        public int Attack { get; }
 
         /// <summary>
         /// The defense value of the shield
         /// </summary>
-        public ushort Defense { get; }
+        public int Defense { get; }
 
         /// <summary>
         /// The endurance of the shield
         /// </summary>
-        public ushort Endurance { get; }
+        public int Endurance { get; }
 
         /// <summary>
         /// Whether the shield is broken or not
         /// </summary>
         public bool IsBroken { get => Endurance == 0; }
 
-        public Shield(ushort attack, ushort defense, ushort endurance)
+        public Shield(int attack, int defense, int endurance)
         {
             this.Attack = attack;
             this.Defense = defense;

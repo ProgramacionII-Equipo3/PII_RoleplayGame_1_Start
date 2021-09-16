@@ -10,24 +10,24 @@ namespace Library
         /// <summary>
         /// The attack value of the armor
         /// </summary>
-        public ushort Attack { get; }
+        public int Attack { get; }
 
         /// <summary>
         /// The defense value of the armor
         /// </summary>
-        public ushort Defense { get; }
+        public int Defense { get; }
 
         /// <summary>
         /// The endurance of the armor
         /// </summary>
-        public ushort ArmorLife { get; }
+        public int ArmorLife { get; }
 
         /// <summary>
         /// Whether the armor is broken or not
         /// </summary>
         public bool IsBroken { get => ArmorLife == 0; }
 
-        public HeavyArmor(ushort attack, ushort defense, ushort armorLife)
+        public HeavyArmor(int attack, int defense, int armorLife)
         {
             this.Attack = attack;
             this.Defense = defense;

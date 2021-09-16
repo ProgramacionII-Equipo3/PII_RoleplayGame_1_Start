@@ -10,14 +10,14 @@ namespace Library
         /// <summary>
         /// The attack value of the sword
         /// </summary>
-        public ushort Attack { get; }
+        public int Attack { get; }
 
         /// <summary>
         /// The defense value of the sword
         /// </summary>
-        public ushort Defense { get; }
+        public int Defense { get; }
 
-        public Sword(ushort attack, ushort defense)
+        public Sword(int attack, int defense)
         {
             this.Attack = attack;
             this.Defense = defense;
