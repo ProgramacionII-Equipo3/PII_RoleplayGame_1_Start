@@ -1,4 +1,5 @@
 using System;
+using Library;
 namespace Library
 {
     public class Elf
@@ -25,12 +26,12 @@ namespace Library
             }
         }
 
-        public static Helmet Helmet{get; set;}
-        public  static Sword Sword {get; set;}
+        public Helmet Helmet{get; set ;}
+        public Sword Sword {get; set ;}
 
 
 
-        public Elf (string name, byte magicLevel,)
+        public Elf (string name, byte magicLevel)
         {
             this.Name=name;
             this.MagicLevel=magicLevel;
@@ -40,8 +41,8 @@ namespace Library
 
         public void LoseVit(ushort damage)
         {
-            ushort damage-=(this.Helmet.Defense+this.Sword.Defense);
-            CurrentVit-=(ushort damage);
+            damage = (ushort)(damage-(this.Helmet.Defense+this.Sword.Defense));
+            CurrentVit= (ushort)(CurrentVit - damage);
         }
     }
 }

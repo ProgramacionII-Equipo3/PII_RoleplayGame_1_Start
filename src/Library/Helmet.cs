@@ -7,12 +7,11 @@ namespace Library
         public ushort Attack{get;}
         public ushort Defense{get;}
 
-        public Helmet()
+        public Helmet(ushort attack, ushort defense)
         {
-            this.Attack=5;
-            this.Defense=30;           
+            this.Attack=attack;
+            this.Defense=defense;           
         }
-
 
 
 

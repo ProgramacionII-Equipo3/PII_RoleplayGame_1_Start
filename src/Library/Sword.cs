@@ -4,13 +4,13 @@ namespace Library
 {
     public class Sword
     {
-        public byte Attack{get;}
-        public byte Defense{get;}
+        public ushort Attack{get;}
+        public ushort Defense{get;}
 
-        public Sword()
+        public Sword(ushort attack, ushort defense)
         {
-            this.Attack=30;
-            this.Defense=5;           
+            this.Attack=attack;
+            this.Defense=defense;           
         }
 
 
