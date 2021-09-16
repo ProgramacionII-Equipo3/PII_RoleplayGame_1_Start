@@ -119,6 +119,7 @@
 	  "type": 1,
 	  "responsibilities": [
 		"Store its name",
+		"Calculate its net strength and defense",
 		"Store and modify the magic wand it possesses, if it does",
 		"Store and modify the spell book it possesses, if it does",
 		"Store its orientation and level of magic",
@@ -138,6 +139,7 @@
 	  "type": 1,
 	  "responsibilities": [
 		"Store its name",
+		"Calculate its net strength and defense",
 		"Store its level of magic",
 		"Store and modify the sword it possesses, if it does",
 		"Store and modify the helmet it possesses, if it does",
@@ -157,7 +159,8 @@
 	  "responsibilities": [
 		"Store its name",
 		"Store its strength",
-		"Store its physical resistance",
+		"Store its defense",
+		"Calculate its net strength and defense",
 		"Store and modify the shield it possesses, if it does",
 		"Store and modify the axe it possesses, if it does",
 		"Store its maximum vitality",
@@ -175,6 +178,7 @@
 	  "type": 1,
 	  "responsibilities": [
 		"Store its name",
+		"Calculate its net strength and defense",
 		"Store and modify the hammer it possesses, if it does",
 		"Store and modify the armor it possesses, if it does",
 		"Store its maximum vitality",

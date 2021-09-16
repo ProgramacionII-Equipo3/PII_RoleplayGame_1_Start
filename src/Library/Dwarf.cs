@@ -27,7 +27,7 @@ namespace Library
         /// </summary>
         public int CurrentVit {
             get => currentVit;
-            set
+            private set
             {
                 if (value >= MaxVit) value = MaxVit;
                 else if(value < 0) value = 0;
@@ -76,6 +76,17 @@ namespace Library
             this.MaxVit = this.currentVit = maxVit;
             this.GrossStrength = strength;
             this.GrossDefense = defense;
+        }
+
+        /// <summary>
+        /// Modifies the dwarf's vitality and equipment's durability based on the received attack.
+        /// </summary>
+        /// <param name="netAttack">The net attack of the oponent.</param>
+        public void ReceiveAttack(int netAttack)
+        {
+            CurrentVit -= netAttack;
+            if(Shield is Shield shield)
+                shield.ReceiveAttack();
         }
     }
 }
