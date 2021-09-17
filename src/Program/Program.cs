@@ -1,5 +1,6 @@
-﻿using System;
+using System;
 using Library;
+
 namespace Program
 {
     class Program
