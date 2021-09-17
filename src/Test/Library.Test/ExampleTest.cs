@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using Library;
 
 namespace Test.Library
 {
@@ -12,8 +13,7 @@ namespace Test.Library
         {
             Assert.True(true);
         }
-
+        
     }
-
 
 }
