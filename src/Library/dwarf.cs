@@ -37,7 +37,7 @@ namespace Library
         {
             if (damage >= this.Shield.Endurance)
             {
-                damage=(ushort)(damage-this.Axe.Defense);
+                damage = (ushort)(damage-this.Axe.Defense);
             }
             else
             {
