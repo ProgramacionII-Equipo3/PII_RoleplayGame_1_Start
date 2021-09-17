@@ -84,6 +84,7 @@ namespace Library
         /// <param name="netAttack">The net attack of the oponent.</param>
         public void ReceiveAttack(int netAttack)
         {
+            if(netAttack == 0) return;
             CurrentVit -= Utils.CalcDamage(netAttack, NetDefense);
             if(Shield is Shield shield)
                 shield.ReceiveAttack();

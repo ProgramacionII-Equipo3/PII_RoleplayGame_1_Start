@@ -70,6 +70,7 @@ namespace Library
         /// <param name="netAttack">The net attack of the oponent.</param>
         public void ReceiveAttack(int netAttack)
         {
+            if(netAttack == 0) return;
             CurrentVit -= Utils.CalcDamage(netAttack, NetDefense);
             if(Weapon is Hammer hammer) hammer.ReceiveAttack();
             if(Vest is HeavyArmor armor) armor.ReceiveAttack();
