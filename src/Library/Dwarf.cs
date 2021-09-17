@@ -20,18 +20,18 @@ namespace Library
         /// <summary>
         /// The raw stat of the current vitality.
         /// </summary>
-        private int currentVit;
+        private int _currentVit;
 
         /// <summary>
         /// The current vitality of the dwarf.
         /// </summary>
         public int CurrentVit {
-            get => currentVit;
+            get => _currentVit;
             private set
             {
                 if (value >= MaxVit) value = MaxVit;
                 else if(value < 0) value = 0;
-                currentVit = value;
+                _currentVit = value;
             }
         }
 
@@ -73,7 +73,7 @@ namespace Library
             Utils.CheckPositive(defense, "defense");
 
             this.Name = name;
-            this.MaxVit = this.currentVit = maxVit;
+            this.MaxVit = this._currentVit = maxVit;
             this.GrossAttack = attack;
             this.GrossDefense = defense;
         }
@@ -95,7 +95,7 @@ namespace Library
         /// <param name="healedVit">The amount of healing.</param>
         public void Heal(int healedVit)
         {
-            if(healedVit < 0) return;
+            if(healedVit <= 0) return;
             CurrentVit += healedVit;
         }
     }
