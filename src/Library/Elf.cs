@@ -3,19 +3,24 @@ using System;
 namespace Library
 {
     /// <summary>
-    /// This class represents a dwarf in the game.
+    /// This class represents a elf in the game.
     /// </summary>
-    public class Dwarf
+    public class Elf
     {
         /// <summary>
-        /// The name of the dwarf.
+        /// The name of the elf.
         /// </summary>
         public string Name { get; }
 
         /// <summary>
-        /// The maximum vitality of the dwarf.
+        /// The maximum vitality of the elf.
         /// </summary>
         public int MaxVit { get; }
+
+        /// <summary>
+        /// The magic level of the wizard.
+        /// </summary>
+        public int MagicLevel { get; private set; }
 
         /// <summary>
         /// The raw stat of the current vitality.
@@ -23,7 +28,7 @@ namespace Library
         private int currentVit;
 
         /// <summary>
-        /// The current vitality of the dwarf.
+        /// The current vitality of the elf.
         /// </summary>
         public int CurrentVit {
             get => currentVit;
@@ -36,61 +41,46 @@ namespace Library
         }
 
         /// <summary>
-        /// The innate strength of the dwarf.
+        /// The strength of the elf.
         /// </summary>
-        public int GrossStrength { get; private set; }
+        public int NetStrength { get => (int)( (this.Weapon.Attack + this.Helmet.Attack) * (1 + 0.2 * MagicLevel) ); }
 
         /// <summary>
-        /// The strength of the dwarf, counting innate strength and equipment.
+        /// The defense of the elf.
         /// </summary>
-        public int NetStrength { get => this.GrossStrength + this.Shield.Attack + this.Weapon.Attack; }
+        public int NetDefense { get => this.Weapon.Defense + this.Helmet.Defense; }
 
         /// <summary>
-        /// The innate defense of the dwarf.
+        /// The elf's sword.
         /// </summary>
-        public int GrossDefense { get; private set; }
+        public Sword Weapon { get; set; } = null;
 
         /// <summary>
-        /// The defense of the dwarf, counting innate defense and equipment.
+        /// The elf's helmet.
         /// </summary>
-        public int NetDefense { get => this.GrossDefense + this.Shield.Defense + this.Weapon.Defense; }
+        public Helmet Helmet { get; set; } = null;
 
-        /// <summary>
-        /// The dwarf's shield.
-        /// </summary>
-        public Shield Shield { get; set; } = null;
-
-        /// <summary>
-        /// The dwarf's weapon (an axe).
-        /// </summary>
-        public Axe Weapon { get; set; } = null;
-
-        public Dwarf(string name, int maxVit, int strength, int defense)
+        public Elf(string name, int maxVit, int magicLevel)
         {
             Utils.CheckString(name, "name");
             Utils.CheckPositive(maxVit, "maxVit");
-            Utils.CheckPositive(strength, "strength");
-            Utils.CheckPositive(defense, "defense");
 
             this.Name = name;
             this.MaxVit = this.currentVit = maxVit;
-            this.GrossStrength = strength;
-            this.GrossDefense = defense;
+            this.MagicLevel = magicLevel;
         }
-
+        
         /// <summary>
-        /// Reduces the dwarf's vitality and equipment's durability based on the received attack.
+        /// Reduces the elf's vitality based on the received attack.
         /// </summary>
         /// <param name="netAttack">The net attack of the oponent.</param>
         public void ReceiveAttack(int netAttack)
         {
             CurrentVit -= Utils.CalcDamage(netAttack, NetDefense);
-            if(Shield is Shield shield)
-                shield.ReceiveAttack();
         }
 
         /// <summary>
-        /// Heals the dwarf.
+        /// Heals the elf.
         /// </summary>
         /// <param name="healedVit">The amount of healing.</param>
         public void Heal(int healedVit)

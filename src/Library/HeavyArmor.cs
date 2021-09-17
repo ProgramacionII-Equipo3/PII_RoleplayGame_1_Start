@@ -3,35 +3,48 @@ using System;
 namespace Library
 {
     /// <summary>
-    /// This class represents a piece of armor
+    /// This class represents a piece of armor.
     /// </summary>
     public class HeavyArmor
     {
         /// <summary>
-        /// The attack value of the armor
+        /// The attack value of the armor.
         /// </summary>
-        public ushort Attack { get; }
+        public int Attack { get; }
 
         /// <summary>
-        /// The defense value of the armor
+        /// The defense value of the armor.
         /// </summary>
-        public ushort Defense { get; }
+        public int Defense { get; }
 
         /// <summary>
-        /// The endurance of the armor
+        /// The raw stat of the endurance of the armor.
         /// </summary>
-        public ushort ArmorLife { get; }
+        private int armorLife;
 
         /// <summary>
-        /// Whether the armor is broken or not
+        /// The endurance of the armor.
+        /// </summary>
+        public int ArmorLife { get => IsBroken ? 0 : armorLife; }
+
+        /// <summary>
+        /// Whether the armor is broken or not.
         /// </summary>
         public bool IsBroken { get => ArmorLife == 0; }
 
-        public HeavyArmor(ushort attack, ushort defense, ushort armorLife)
+        public HeavyArmor(int attack, int defense, int armorLife)
         {
+            Utils.CheckPositive(attack, "attack");
+            Utils.CheckPositive(defense, "defense");
+            Utils.CheckPositive(armorLife, "armorLife");
             this.Attack = attack;
             this.Defense = defense;
-            this.ArmorLife = armorLife;
+            this.armorLife = armorLife;
+        }
+
+        public void ReceiveAttack()
+        {
+            if (!IsBroken) armorLife--;
         }
     }
 }

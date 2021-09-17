@@ -3,22 +3,24 @@ using System;
 namespace Library
 {
     /// <summary>
-    /// This class represents a helmet
+    /// This class represents a helmet.
     /// </summary>
     public class Helmet
     {
         /// <summary>
-        /// The attack value of the helmet
+        /// The attack value of the helmet.
         /// </summary>
-        public ushort Attack { get; }
+        public int Attack { get; }
 
         /// <summary>
-        /// The defense value of the helmet
+        /// The defense value of the helmet.
         /// </summary>
-        public ushort Defense { get; }
+        public int Defense { get; }
 
-        public Helmet(ushort attack, ushort defense)
+        public Helmet(int attack, int defense)
         {
+            Utils.CheckPositive(attack, "attack");
+            Utils.CheckPositive(defense, "defense");
             this.Attack = attack;
             this.Defense = defense;
         }
