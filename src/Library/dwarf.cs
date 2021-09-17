@@ -5,8 +5,8 @@ namespace Library
     public class Dwarf
     {
 
-        public Axe axe;
-        public Shield shield;
+        public Axe Axe;
+        public Shield Shield;
 
         public string Name { get; private set; }
         public uint MaxVit { get; private set; }
@@ -25,12 +25,12 @@ namespace Library
 
         public ushort TotalAttack()
         { 
-            return this.Axe.Attack + this.Shield.Attack + this.Strength; 
+            return (ushort)(this.Axe.Attack + this.Shield.Attack + this.Strength); 
         }
 
         public ushort TotalDefense()
         {
-            return this.Shield.Defense + this.Axe.Defense; 
+            return (ushort)(this.Shield.Defense + this.Axe.Defense); 
         }
 
         public void LoseVit(ushort damage)

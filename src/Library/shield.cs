@@ -2,15 +2,15 @@ namespace Library
 {
     public class Shield
     {
-        public ushort attack;
-        public ushort defense;
-        public ushort endurance;
+        public ushort Attack;
+        public ushort Defense;
+        public ushort Endurance;
 
         public Shield(ushort attack, ushort defense, ushort endurance) 
         {
-            this.attack = attack;
-            this.defense = defense;
-            this.endurance = endurance;
+            this.Attack = attack;
+            this.Defense = defense;
+            this.Endurance = endurance;
         }
     }
 }
