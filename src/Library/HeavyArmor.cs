@@ -30,7 +30,7 @@ namespace Library
         /// <summary>
         /// Whether the armor is broken or not.
         /// </summary>
-        public bool IsBroken { get => ArmorLife == 0; }
+        public bool IsBroken { get => armorLife == 0; }
 
         public HeavyArmor(int attack, int defense, int armorLife)
         {

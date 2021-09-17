@@ -19,10 +19,15 @@ namespace Library.Test
             wizard.Wand = new MagicWand(100, 20);
             wizard.Book = new SpellBook(500, 0);
 
-            wizard.ReceiveAttack(dwarf.NetStrength);
+            Assert.AreEqual(wizard.NetDefense, 20);
+            Assert.AreEqual(dwarf.NetDefense, 120);
+            Assert.AreEqual(wizard.NetAttack, 5400);
+            Assert.AreEqual(dwarf.NetAttack, 80);
+
+            wizard.ReceiveAttack(dwarf.NetAttack);
             Assert.AreEqual(wizard.CurrentVit, 240);
 
-            dwarf.ReceiveAttack(wizard.NetStrength);
+            dwarf.ReceiveAttack(wizard.NetAttack);
             Assert.AreEqual(dwarf.CurrentVit, 0);
         }
 

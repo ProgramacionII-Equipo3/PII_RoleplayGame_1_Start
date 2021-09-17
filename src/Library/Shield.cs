@@ -30,7 +30,7 @@ namespace Library
         /// <summary>
         /// Whether the shield is broken or not.
         /// </summary>
-        public bool IsBroken { get => Endurance == 0; }
+        public bool IsBroken { get => endurance == 0; }
 
         public Shield(int attack, int defense, int endurance)
         {

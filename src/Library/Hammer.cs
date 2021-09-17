@@ -30,7 +30,7 @@ namespace Library
         /// <summary>
         /// Whether the hammer is broken or not.
         /// </summary>
-        public bool IsBroken { get => HammerLife == 0; }
+        public bool IsBroken { get => hammerLife == 0; }
 
         public Hammer(int attack, int defense, int hammerLife)
         {

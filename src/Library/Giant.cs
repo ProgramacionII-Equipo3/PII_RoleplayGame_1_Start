@@ -36,9 +36,9 @@ namespace Library
         }
 
         /// <summary>
-        /// The strength of the giant.
+        /// The attack of the giant.
         /// </summary>
-        public int NetStrength { get => this.Weapon.Attack + this.Vest.Attack; }
+        public int NetAttack { get => this.Weapon.Attack + this.Vest.Attack; }
 
         /// <summary>
         /// The defense of the giant.

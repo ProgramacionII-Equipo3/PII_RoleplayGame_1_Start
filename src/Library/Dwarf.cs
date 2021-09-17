@@ -36,14 +36,14 @@ namespace Library
         }
 
         /// <summary>
-        /// The innate strength of the dwarf.
+        /// The innate attack of the dwarf.
         /// </summary>
-        public int GrossStrength { get; private set; }
+        public int GrossAttack { get; private set; }
 
         /// <summary>
-        /// The strength of the dwarf, counting innate strength and equipment.
+        /// The attack of the dwarf, counting innate attack and equipment.
         /// </summary>
-        public int NetStrength { get => this.GrossStrength + this.Shield.Attack + this.Weapon.Attack; }
+        public int NetAttack { get => this.GrossAttack + this.Shield.Attack + this.Weapon.Attack; }
 
         /// <summary>
         /// The innate defense of the dwarf.
@@ -65,16 +65,16 @@ namespace Library
         /// </summary>
         public Axe Weapon { get; set; } = null;
 
-        public Dwarf(string name, int maxVit, int strength, int defense)
+        public Dwarf(string name, int maxVit, int attack, int defense)
         {
             Utils.CheckString(name, "name");
             Utils.CheckPositive(maxVit, "maxVit");
-            Utils.CheckPositive(strength, "strength");
+            Utils.CheckPositive(attack, "attack");
             Utils.CheckPositive(defense, "defense");
 
             this.Name = name;
             this.MaxVit = this.currentVit = maxVit;
-            this.GrossStrength = strength;
+            this.GrossAttack = attack;
             this.GrossDefense = defense;
         }
 

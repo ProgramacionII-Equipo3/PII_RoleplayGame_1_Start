@@ -41,9 +41,9 @@ namespace Library
         }
 
         /// <summary>
-        /// The strength of the elf.
+        /// The attack of the elf.
         /// </summary>
-        public int NetStrength { get => (int)( (this.Weapon.Attack + this.Helmet.Attack) * (1 + 0.2 * MagicLevel) ); }
+        public int NetAttack { get => (int)( (this.Weapon.Attack + this.Helmet.Attack) * (1 + 0.2 * MagicLevel) ); }
 
         /// <summary>
         /// The defense of the elf.
