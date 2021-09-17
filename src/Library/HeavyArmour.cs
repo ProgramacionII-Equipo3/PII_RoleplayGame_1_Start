@@ -3,58 +3,58 @@ using System;
 namespace Library
 {
     /// <summary>
-    /// Clase para el elemento Hammer del gigante
+    /// Clase para el objeto armadura del gigante
     /// </summary>
-    public class Hammer
+    public class HeavyArmour
     {
         /// <summary>
-        /// Nombre del objeto Hammer
+        /// Nombre del objeto HeavyArmour
         /// </summary>
         private string Name { get; set; } 
 
         /// <summary>
-        /// Valor de ataque de Hammer
+        /// Valor de ataque de HeavyArmour
         /// </summary>
         private int Attack { get; set; }
 
         /// <summary>
-        /// Valor de defensa de Hammer
+        /// Valor de defensa HeavyArmour
         /// </summary>
         private int Defense { get; set; }
 
         /// <summary>
-        /// Vida útil de Hammer
+        /// Vida útil del objeto HeavyArmour
         /// </summary>
         /// <value>100</value>//  
-        public int HammerLife { get; set; }
+        public int ArmourLife { get; set; }
 
         /// <summary>
-        /// Representa si el objeto Hammer es usable
+        /// Representa si el objeto HeavyArmour es usable
         /// </summary>
         public bool IsBroken { get; set; }
 
         /// <summary>
-        /// Constructor del objeto Hammer
+        /// Constructor de la clase HeavyArmour
         /// </summary>
-        /// <param nombre="name"></param>
-        /// <param ValordelDaño="attack"></param>
-        /// <param ValordelaDefensa="defense"></param>
-        public Hammer(string name, int attack, int defense)
+        /// <param name="name"></param>
+        /// <param ValordeAtaque="attack"></param>
+        /// <param ValordeDefensa="defense"></param>
+        public HeavyArmour(string name, int attack, int defense)
         {
             this.Name = name;
             this.Attack = attack;
             this.Defense = defense;
-            this.HammerLife = 100;
+            this.ArmourLife = 100;
             this.IsBroken = false;
         }
 
         /// <summary>
-        /// Método para comprobar si el objeto Hammer es usable
+        /// Método para comprobar si la armadura es usable
         /// </summary>
-        /// <returns></returns>
-        public bool IsHammerBroken()
+        /// <returns>this.IsBroken</returns>
+        public bool IsArmourBroken()
         {
-            if(this.HammerLife == 0)
+            if(this.ArmourLife == 0)
             {
                 this.IsBroken = true;
                 
@@ -64,10 +64,10 @@ namespace Library
         }
 
         /// <summary>
-        /// Método para equipar el objeto Hammer a un personaje
+        /// Método para equipar la armadura en el personaje
         /// </summary>
         /// <param name="giant"></param>
-        public void UseHammer(Giant giant)
+        public void UseArmour(Giant giant)
         {   
             if(this.IsBroken == false)
             {
@@ -77,13 +77,14 @@ namespace Library
             }
             
         }
+        
         /// <summary>
-        /// Método para checkear si el objeto Hammer es usable, y en caso de que no lo desequipa
+        /// Método para checkear si el objeto HeavyArmour es usable, y en caso de que no lo desequipa
         /// </summary>
         /// <param name="giant"></param>
-        public void CheckHammerLife(Giant giant)
+        public void CheckArmourLife(Giant giant)
         {
-            if(this.IsHammerBroken() == true)
+            if(this.IsArmourBroken() == true)
             {
                 giant.Damage -= this.Attack;
                 giant.CurrentVit -= this.Defense;
