@@ -22,8 +22,10 @@ namespace Test.Library
             hammer.UseHammer(giant);
             armour.UseArmour(giant);
             Assert.AreEqual(40, giant.Damage);
-            
+            Assert.AreEqual(300, giant.MaxVit);            
         } 
+
+
 
     }
 

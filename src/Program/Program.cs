@@ -11,9 +11,9 @@ namespace Program
             HeavyArmour Armadura = new HeavyArmour("Armadura Pesada", 0, 150);
             Giant Gigante = new Giant("Gigante", Martillo, Armadura);
             Giant GiganteEnemigo = new Giant("GiganteEnemigo", Martillo, Armadura);
-            Martillo.UseHammer(Gigante);
-            Armadura.UseArmour(GiganteEnemigo);
-            Gigante.Attack(GiganteEnemigo);
+            //Martillo.UseHammer(Gigante);
+            //Armadura.UseArmour(GiganteEnemigo);
+            //Gigante.Attack(GiganteEnemigo);
             
         }
     }

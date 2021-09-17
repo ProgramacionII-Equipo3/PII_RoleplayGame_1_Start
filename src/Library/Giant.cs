@@ -41,13 +41,17 @@ namespace Library
         public Giant(string name, Hammer weapon, HeavyArmour armour)
         {
             this.Name = name;
-            this.MaxVit = 100;
+            this.MaxVit = 150;
             this.Damage = 20;
             this.CurrentVit = 150;
             this.Weapon = weapon;
             this.Armour = armour;
         }
 
+        /// <summary>
+        /// Métodos de ataque para los otros personajes
+        /// </summary>
+        /// <param name="enemy"></param>
         public void Attack(Giant enemy)
         {
             while(enemy.CurrentVit > 0)
@@ -63,18 +67,46 @@ namespace Library
         }
 
         /*
-        /// <summary>
-        /// Método para que otro personaje ataque al gigante
-        /// </summary>
-        /// <param name="foe"></param>
-        public void ReceiveAttack(Giant foe)
+        public void Attack(Dwarf enemy)
         {
-            this.CurrentVit -= foe.Damage;
-            if(this.CurrentVit < 0)
+            while(enemy.CurrentVit > 0)
             {
-                this.CurrentVit = 0;
-            }
-            this.Armour.ArmourLife -= 10;
+                this.Weapon.CheckHammerLife(this);
+                enemy.CurrentVit -= this.Damage;
+                if(enemy.CurrentVit < 0)
+                {
+                    enemy.CurrentVit = 0;
+                }
+                this.Weapon.HammerLife -= 10;
+            }           
+        }
+
+        public void Attack(Elf enemy)
+        {
+            while(enemy.CurrentVit > 0)
+            {
+                this.Weapon.CheckHammerLife(this);
+                enemy.CurrentVit -= this.Damage;
+                if(enemy.CurrentVit < 0)
+                {
+                    enemy.CurrentVit = 0;
+                }
+                this.Weapon.HammerLife -= 10;
+            }           
+        }
+
+        public void Attack(Wizard enemy)
+        {
+            while(enemy.CurrentVit > 0)
+            {
+                this.Weapon.CheckHammerLife(this);
+                enemy.CurrentVit -= this.Damage;
+                if(enemy.CurrentVit < 0)
+                {
+                    enemy.CurrentVit = 0;
+                }
+                this.Weapon.HammerLife -= 10;
+            }           
         }
         */
     }

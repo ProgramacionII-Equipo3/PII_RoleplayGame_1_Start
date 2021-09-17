@@ -72,8 +72,6 @@ namespace Library
             if(this.IsBroken == false)
             {
                 giant.Damage += this.Attack;
-                giant.CurrentVit += this.Defense;
-                giant.MaxVit += this.Defense;
             }
             
         }
