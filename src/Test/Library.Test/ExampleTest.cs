@@ -21,7 +21,7 @@ namespace Library.Test
 
             Assert.AreEqual(wizard.NetDefense, 20);
             Assert.AreEqual(dwarf.NetDefense, 120);
-            Assert.AreEqual(wizard.NetAttack, 5400);
+            Assert.AreEqual(wizard.NetAttack, 1800);
             Assert.AreEqual(dwarf.NetAttack, 80);
 
             wizard.ReceiveAttack(dwarf.NetAttack);

@@ -48,7 +48,7 @@ namespace Library
         /// <summary>
         /// The attack of the wizard.
         /// </summary>
-        public int NetAttack { get => (int)( (this.Wand.Attack + this.Book.Attack) * (1 + 0.2 * MagicLevel) ); }
+        public int NetAttack { get => (int)( (this.Wand.Attack + this.Book.Attack) * (1 + 0.05 * MagicLevel) ); }
 
         /// <summary>
         /// The defense of the wizard.
