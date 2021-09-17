@@ -5,7 +5,7 @@ namespace Library
     public class Elf
     {
         public string Name{get; set;}
-        public byte MagicLevel {get; private set;}
+        public ushort MagicLevel {get; private set;}
         public uint MaxVit {get; private set;}
         public uint CurrentVit 
         {
@@ -40,7 +40,7 @@ namespace Library
         
         public void FullAttack()
         {
-            ushort FullAttack=(ushort)(this.Sword.Attack+this.Helmet.Attack);   
+            ushort FullAttack=(ushort)((this.Sword.Attack+this.Helmet.Attack)*(this.MagicLevel*0.05));   
         }
         public void LoseVit(ushort damage)
         {
