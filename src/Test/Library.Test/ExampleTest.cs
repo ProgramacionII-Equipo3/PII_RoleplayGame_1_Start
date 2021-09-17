@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using Library;
 
 namespace Test.Library
 {
@@ -12,7 +13,14 @@ namespace Test.Library
         {
             Assert.True(true);
         }
+        
+        
+        [Test]
 
+        public void Properties()
+        {
+            Elf elf = new Elf ("Elfo",32);
+        }
     }
 
 

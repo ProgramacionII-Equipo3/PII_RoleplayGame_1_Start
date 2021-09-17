@@ -30,7 +30,6 @@ namespace Library
         public Sword Sword {get; set ;}
 
 
-
         public Elf (string name, byte magicLevel)
         {
             this.Name=name;
@@ -38,7 +37,11 @@ namespace Library
             this.CurrentVit=100;
             this.MaxVit=100;
         }
-
+        
+        public void FullAttack()
+        {
+            ushort FullAttack=(ushort)(this.Sword.Attack+this.Helmet.Attack);   
+        }
         public void LoseVit(ushort damage)
         {
             damage = (ushort)(damage-(this.Helmet.Defense+this.Sword.Defense));
