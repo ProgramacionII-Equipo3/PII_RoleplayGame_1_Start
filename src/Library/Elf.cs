@@ -7,21 +7,23 @@ namespace Library
         public string Name{get; set;}
         public ushort MagicLevel {get; private set;}
         public uint MaxVit {get; private set;}
+        private uint _currentVit;
         public uint CurrentVit 
         {
-            get
-            {
-                return CurrentVit;
-            }
+            get => _currentVit;
             private set
             {
                 if (value<=0)
                 {
-                    CurrentVit=value;
+                    _currentVit=0;
                 }
                 else if (value>=MaxVit)
                 {
-                    CurrentVit=MaxVit;
+                    _currentVit=MaxVit;
+                }
+                else
+                {
+                    _currentVit = value;
                 }
             }
         }
