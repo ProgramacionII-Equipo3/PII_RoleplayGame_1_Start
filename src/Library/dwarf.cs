@@ -39,9 +39,9 @@ namespace Library
             CurrentVit= (ushort)(CurrentVit - damage);
         }
 
-        public void RestoreVit()
+        public void RestoreVit(ushort restore)
         {
-            this.CurrentVit = this.MaxVit;
+            CurrentVit = (ushort)(CurrentVit + restore);
         }
     }
 }
