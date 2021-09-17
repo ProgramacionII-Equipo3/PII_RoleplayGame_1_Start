@@ -9,7 +9,7 @@ namespace Library
 
         public Sword(ushort attack, ushort defense)
         {
-            this.Attack=attack;
+            this.Attack=attack; 
             this.Defense=defense;           
         }
 

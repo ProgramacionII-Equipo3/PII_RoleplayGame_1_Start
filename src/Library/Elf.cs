@@ -38,9 +38,9 @@ namespace Library
             this.MaxVit=100;
         }
         
-        public void FullAttack()
+        public ushort FullAttack()
         {
-            ushort FullAttack=(ushort)((this.Sword.Attack+this.Helmet.Attack)*(1+this.MagicLevel*0.05));   
+            return (ushort)((this.Sword.Attack+this.Helmet.Attack)*(1+this.MagicLevel*0.05));   
         }
         public void LoseVit(ushort damage)
         {
