@@ -2,7 +2,13 @@ namespace Library
 {
     public class Axe
     {
-        public static ushort attack = 10;
-        public static ushort defense = 2;
+        public ushort attack; 
+        public ushort defense; 
+
+        public Axe (ushort attack, ushort defense)
+        {
+            this.attack = attack;
+            this.defense = defense;
+        }
     }
 }

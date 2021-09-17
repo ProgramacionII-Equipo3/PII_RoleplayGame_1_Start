@@ -6,11 +6,11 @@ namespace Library
         public ushort defense;
         public ushort endurance;
 
-        public Shield() 
+        public Shield(ushort attack, ushort defense, ushort endurance) 
         {
-            this.attack = 2;
-            this.defense = 10;
-            this.endurance = 20;
+            this.attack = attack;
+            this.defense = defense;
+            this.endurance = endurance;
         }
     }
 }

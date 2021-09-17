@@ -1,30 +1,47 @@
 using System;
-using System.Collections;
 
 namespace Library
 {
     public class Dwarf
     {
-        private string name;
-        private uint maxVit;
-        private uint currentVit;
-        private ushort strength;
-        public static Axe axe;
-        public static Shield shield;
 
-        public string Name { get; set; }
-        public uint MaxVit { get; set; }
-        public uint CurrentVit { get; set; }
-        public ushort Strength { get; set; }
+        public Axe axe;
+        public Shield shield;
 
-        public Dwarf(string name, ushort strength)
+        public string Name { get; private set; }
+        public uint MaxVit { get; private set; }
+        public uint CurrentVit { get; private set; }
+        public ushort Strength { get; private set; }
+
+        public Dwarf(string name, ushort strength, Axe axe, Shield shield)
         {
             this.Name = name;
             this.Strength = strength;
+            this.Axe = axe;
+            this.Shield = shield;
             this.MaxVit = 100;
             this.CurrentVit = 100;
         }
 
+        public ushort TotalAttack()
+        { 
+            return this.Axe.Attack + this.Shield.Attack + this.Strength; 
+        }
 
+        public ushort TotalDefense()
+        {
+            return this.Shield.Defense + this.Axe.Defense; 
+        }
+
+        public void LoseVit(ushort damage)
+        {
+            damage = (ushort)(damage-(this.Axe.Defense+this.Shield.Defense));
+            CurrentVit= (ushort)(CurrentVit - damage);
+        }
+
+        public void RestoreVit()
+        {
+            this.CurrentVit = this.MaxVit;
+        }
     }
 }
