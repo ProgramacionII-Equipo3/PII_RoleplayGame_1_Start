@@ -40,7 +40,7 @@ namespace Library
         
         public void FullAttack()
         {
-            ushort FullAttack=(ushort)((this.Sword.Attack+this.Helmet.Attack)*(this.MagicLevel*0.05));   
+            ushort FullAttack=(ushort)((this.Sword.Attack+this.Helmet.Attack)*(1+this.MagicLevel*0.05));   
         }
         public void LoseVit(ushort damage)
         {
