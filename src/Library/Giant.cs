@@ -38,12 +38,12 @@ namespace Library
         /// <summary>
         /// The attack of the giant.
         /// </summary>
-        public int NetAttack { get => this.Weapon.Attack + this.Vest.Attack; }
+        public int NetAttack { get => (this.Weapon?.Attack ?? 0) + (this.Vest?.Attack ?? 0); }
 
         /// <summary>
         /// The defense of the giant.
         /// </summary>
-        public int NetDefense { get => this.Weapon.Defense + this.Vest.Defense; }
+        public int NetDefense { get => (this.Weapon?.Defense ?? 0) + (this.Vest?.Defense ?? 0); }
 
         /// <summary>
         /// The giant's hammer.

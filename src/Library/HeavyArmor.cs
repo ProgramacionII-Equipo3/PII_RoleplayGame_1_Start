@@ -7,44 +7,43 @@ namespace Library
     /// </summary>
     public class HeavyArmor
     {
+        private int _attack { get; }
+
         /// <summary>
         /// The attack value of the armor.
         /// </summary>
-        public int Attack { get; }
+        public int Attack { get => IsBroken ? 0 : _attack; }
+
+        private int _defense { get; }
 
         /// <summary>
         /// The defense value of the armor.
         /// </summary>
-        public int Defense { get; }
-
-        /// <summary>
-        /// The raw stat of the endurance of the armor.
-        /// </summary>
-        private int armorLife;
+        public int Defense { get => IsBroken ? 0 : _defense; }
 
         /// <summary>
         /// The endurance of the armor.
         /// </summary>
-        public int ArmorLife { get => IsBroken ? 0 : armorLife; }
+        public int ArmorLife { get; private set; }
 
         /// <summary>
         /// Whether the armor is broken or not.
         /// </summary>
-        public bool IsBroken { get => armorLife == 0; }
+        public bool IsBroken { get => ArmorLife == 0; }
 
         public HeavyArmor(int attack, int defense, int armorLife)
         {
             Utils.CheckPositive(attack, "attack");
             Utils.CheckPositive(defense, "defense");
             Utils.CheckPositive(armorLife, "armorLife");
-            this.Attack = attack;
-            this.Defense = defense;
-            this.armorLife = armorLife;
+            this._attack = attack;
+            this._defense = defense;
+            this.ArmorLife = armorLife;
         }
 
         public void ReceiveAttack()
         {
-            if (!IsBroken) armorLife--;
+            if (!IsBroken) ArmorLife--;
         }
     }
 }

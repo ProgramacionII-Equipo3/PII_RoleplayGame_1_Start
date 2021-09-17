@@ -43,12 +43,12 @@ namespace Library
         /// <summary>
         /// The attack of the elf.
         /// </summary>
-        public int NetAttack { get => (int)( (this.Weapon.Attack + this.Helmet.Attack) * (1 + 0.05 * MagicLevel) ); }
+        public int NetAttack { get => (int)( ((this.Weapon?.Attack ?? 0) + (this.Helmet?.Attack ?? 0)) * (1 + 0.05 * MagicLevel) ); }
 
         /// <summary>
         /// The defense of the elf.
         /// </summary>
-        public int NetDefense { get => this.Weapon.Defense + this.Helmet.Defense; }
+        public int NetDefense { get => (this.Weapon?.Defense ?? 0) + (this.Helmet?.Defense ?? 0); }
 
         /// <summary>
         /// The elf's sword.

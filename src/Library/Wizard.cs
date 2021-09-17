@@ -48,12 +48,12 @@ namespace Library
         /// <summary>
         /// The attack of the wizard.
         /// </summary>
-        public int NetAttack { get => (int)( (this.Wand.Attack + this.Book.Attack) * (1 + 0.05 * MagicLevel) ); }
+        public int NetAttack { get => (int)( ((this.Wand?.Attack ?? 0) + (this.Book?.Attack ?? 0)) * (1 + 0.05 * MagicLevel) ); }
 
         /// <summary>
         /// The defense of the wizard.
         /// </summary>
-        public int NetDefense { get => this.Wand.Defense + this.Book.Defense; }
+        public int NetDefense { get => (this.Wand?.Defense ?? 0) + (this.Book?.Defense ?? 0); }
 
         /// <summary>
         /// The wizard's magic wand.

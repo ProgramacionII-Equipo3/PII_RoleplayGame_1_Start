@@ -43,7 +43,7 @@ namespace Library
         /// <summary>
         /// The attack of the dwarf, counting innate attack and equipment.
         /// </summary>
-        public int NetAttack { get => this.GrossAttack + this.Shield.Attack + this.Weapon.Attack; }
+        public int NetAttack { get => this.GrossAttack + (this.Shield?.Attack ?? 0) + (this.Weapon?.Attack ?? 0); }
 
         /// <summary>
         /// The innate defense of the dwarf.
@@ -53,7 +53,7 @@ namespace Library
         /// <summary>
         /// The defense of the dwarf, counting innate defense and equipment.
         /// </summary>
-        public int NetDefense { get => this.GrossDefense + this.Shield.Defense + this.Weapon.Defense; }
+        public int NetDefense { get => this.GrossDefense + (this.Shield?.Defense ?? 0) + (this.Weapon?.Defense ?? 0); }
 
         /// <summary>
         /// The dwarf's shield.

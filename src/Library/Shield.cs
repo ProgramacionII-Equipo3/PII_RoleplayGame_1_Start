@@ -7,44 +7,43 @@ namespace Library
     /// </summary>
     public class Shield
     {
+        private int _attack { get; }
+
         /// <summary>
         /// The attack value of the shield.
         /// </summary>
-        public int Attack { get; }
+        public int Attack { get => IsBroken ? 0 : _attack; }
+
+        private int _defense { get; }
 
         /// <summary>
         /// The defense value of the shield.
         /// </summary>
-        public int Defense { get; private set; }
-
-        /// <summary>
-        /// The raw stat of endurance of the shield.
-        /// </summary>
-        private int endurance;
+        public int Defense { get => IsBroken ? 0 : _defense; }
 
         /// <summary>
         /// The endurance of the shield.
         /// </summary>
-        public int Endurance { get => IsBroken ? 0 : endurance; }
+        public int Endurance { get; private set; }
 
         /// <summary>
         /// Whether the shield is broken or not.
         /// </summary>
-        public bool IsBroken { get => endurance == 0; }
+        public bool IsBroken { get => Endurance == 0; }
 
         public Shield(int attack, int defense, int endurance)
         {
             Utils.CheckPositive(attack, "attack");
             Utils.CheckPositive(defense, "defense");
             Utils.CheckPositive(endurance, "endurance");
-            this.Attack = attack;
-            this.Defense = defense;
-            this.endurance = endurance;
+            this._attack = attack;
+            this._defense = defense;
+            this.Endurance = endurance;
         }
 
         public void ReceiveAttack()
         {
-            if (!IsBroken) endurance--;
+            if (!IsBroken) Endurance--;
         }
     }
 }
