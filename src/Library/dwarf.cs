@@ -35,13 +35,35 @@ namespace Library
 
         public void LoseVit(ushort damage)
         {
-            damage = (ushort)(damage-(this.Axe.Defense+this.Shield.Defense));
-            CurrentVit= (ushort)(CurrentVit - damage);
+            if (damage >= this.Shield.Endurance)
+            {
+                damage=(ushort)(damage-this.Axe.Defense);
+            }
+            else
+            {
+                damage = (ushort)(damage-(this.Axe.Defense + this.Shield.Defense));
+            }
+            
+            if (damage >= 0)
+            {
+                CurrentVit = (ushort)(CurrentVit - damage);
+            }
+            else if (damage > CurrentVit)
+            {
+                CurrentVit = 0;
+            }
         }
 
         public void RestoreVit(ushort restore)
         {
-            CurrentVit = (ushort)(CurrentVit + restore);
+            if ((CurrentVit + restore) <= MaxVit)
+            {
+                CurrentVit = (ushort)(CurrentVit + restore);
+            }
+            else
+            {
+                CurrentVit = MaxVit;
+            }
         }
     }
 }
