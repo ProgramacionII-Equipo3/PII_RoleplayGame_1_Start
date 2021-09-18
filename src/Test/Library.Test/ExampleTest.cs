@@ -13,6 +13,7 @@ namespace Test.Library
         {
             Assert.True(true);
         }
+
         [Test]
         public void IsHammerandArmourEquipped() // Caso en el que asigna un martillo y una armadura a un gigante
         {
@@ -24,10 +25,5 @@ namespace Test.Library
             Assert.AreEqual(40, giant.Damage);
             Assert.AreEqual(300, giant.MaxVit);            
         } 
-
-
-
     }
-
-
 }

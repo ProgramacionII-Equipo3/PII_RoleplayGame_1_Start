@@ -14,6 +14,8 @@ namespace Program
             //Martillo.UseHammer(Gigante);
             //Armadura.UseArmour(GiganteEnemigo);
             //Gigante.Attack(GiganteEnemigo);
+            Elf elf1= new Elf ("Elf1",100);
+            Console.WriteLine(elf1.Name);
             
         }
     }
