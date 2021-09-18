@@ -1,46 +1,113 @@
 using System;
-using HammerItem;
+using Library;
 
-namespace Character
+namespace Library
 {
     // Clase para el personaje Giant
     public class Giant
     {
-        private string Name;
-        public uint Damage;
-        private uint CurrentVit;
-        public bool Hammer;
-        public bool Armor;
+        /// <summary>
+        /// Nombre del gigante
+        /// </summary>
+        private string Name { get; }
 
-        public Giant()
+        /// <summary>
+        /// Daño del Gigante
+        /// </summary>
+        /// <value>40</value>
+        public int Damage { get; set; }
+
+        /// <summary>
+        /// Vida actual del gigante
+        /// </summary> 
+        public int CurrentVit { get; set; }
+
+        /// <summary>
+        /// Vida máxima del gigante
+        /// </summary>
+        /// <value>100</value>
+        public int MaxVit { get; set; }
+
+        /// <summary>
+        /// Objeto de la clase Hammer
+        /// </summary>
+       public Hammer Weapon;
+
+       /// <summary>
+       /// Objeto de la clase HeavyArmour
+       /// </summary>
+       public HeavyArmour Armour;
+
+        public Giant(string name, Hammer weapon, HeavyArmour armour)
         {
-            this.Name = "Giant";
-            this.Damage = 40;
+            this.Name = name;
+            this.MaxVit = 150;
+            this.Damage = 20;
             this.CurrentVit = 150;
-            this.Hammer = false;
-            this.Armor = false;
+            this.Weapon = weapon;
+            this.Armour = armour;
         }
 
-        // Método para atacar a otro personaje
-        public void Attack(Giant character, Hammer hammer)
+        /// <summary>
+        /// Métodos de ataque para los otros personajes
+        /// </summary>
+        /// <param name="enemy"></param>
+        public void Attack(Giant enemy)
         {
-            while (character.CurrentVit > 0)
+            while(enemy.CurrentVit > 0)
             {
-                if(this.Hammer == true)
+                this.Weapon.CheckHammerLife(this);
+                enemy.CurrentVit -= this.Damage;
+                if(enemy.CurrentVit < 0)
                 {
-                    character.CurrentVit -= (this.Damage + hammer.HammerDamage);
-                    hammer.HammerLife -= 1;
-                    if(hammer.HammerLife == 0)
-                    {
-                        this.Hammer = false;
-                    }
+                    enemy.CurrentVit = 0;
                 }
-                else
-                {
-                    character.CurrentVit -= this.Damage;
-                }    
-            }
-            
+                this.Weapon.HammerLife -= 10;
+            }           
         }
+
+        /*
+        public void Attack(Dwarf enemy)
+        {
+            while(enemy.CurrentVit > 0)
+            {
+                this.Weapon.CheckHammerLife(this);
+                enemy.CurrentVit -= this.Damage;
+                if(enemy.CurrentVit < 0)
+                {
+                    enemy.CurrentVit = 0;
+                }
+                this.Weapon.HammerLife -= 10;
+            }           
+        }
+
+        public void Attack(Elf enemy)
+        {
+            while(enemy.CurrentVit > 0)
+            {
+                this.Weapon.CheckHammerLife(this);
+                enemy.CurrentVit -= this.Damage;
+                if(enemy.CurrentVit < 0)
+                {
+                    enemy.CurrentVit = 0;
+                }
+                this.Weapon.HammerLife -= 10;
+            }           
+        }
+
+        public void Attack(Wizard enemy)
+        {
+            while(enemy.CurrentVit > 0)
+            {
+                this.Weapon.CheckHammerLife(this);
+                enemy.CurrentVit -= this.Damage;
+                if(enemy.CurrentVit < 0)
+                {
+                    enemy.CurrentVit = 0;
+                }
+                this.Weapon.HammerLife -= 10;
+            }           
+        }
+        */
     }
 }
