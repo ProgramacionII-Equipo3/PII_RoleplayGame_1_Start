@@ -66,17 +66,12 @@ namespace Library
             }           
         }
 
-        /*
         public void Attack(Dwarf enemy)
         {
             while(enemy.CurrentVit > 0)
             {
                 this.Weapon.CheckHammerLife(this);
-                enemy.CurrentVit -= this.Damage;
-                if(enemy.CurrentVit < 0)
-                {
-                    enemy.CurrentVit = 0;
-                }
+                enemy.LoseVit((ushort)this.Damage);
                 this.Weapon.HammerLife -= 10;
             }           
         }
@@ -86,11 +81,7 @@ namespace Library
             while(enemy.CurrentVit > 0)
             {
                 this.Weapon.CheckHammerLife(this);
-                enemy.CurrentVit -= this.Damage;
-                if(enemy.CurrentVit < 0)
-                {
-                    enemy.CurrentVit = 0;
-                }
+                enemy.LoseVit((ushort)this.Damage);
                 this.Weapon.HammerLife -= 10;
             }           
         }
@@ -100,14 +91,19 @@ namespace Library
             while(enemy.CurrentVit > 0)
             {
                 this.Weapon.CheckHammerLife(this);
-                enemy.CurrentVit -= this.Damage;
-                if(enemy.CurrentVit < 0)
-                {
-                    enemy.CurrentVit = 0;
-                }
+                enemy.ReceiveAttack(this.Damage);
                 this.Weapon.HammerLife -= 10;
             }           
         }
-        */
+
+        public int TotalAttack()
+        {
+            return (this.Damage + this.Armour.Attack);
+        }
+
+        public int TotalDefense()
+        {
+            return (this.MaxVit);
+        }
     }
 }

@@ -10,12 +10,12 @@ namespace Library
         /// <summary>
         /// Nombre del objeto HeavyArmour
         /// </summary>
-        private string Name { get; set; } 
+        public string Name { get; set; } 
 
         /// <summary>
         /// Valor de ataque de HeavyArmour
         /// </summary>
-        private int Attack { get; set; }
+        public int Attack { get; set; }
 
         /// <summary>
         /// Valor de defensa HeavyArmour

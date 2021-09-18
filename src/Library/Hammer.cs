@@ -15,7 +15,7 @@ namespace Library
         /// <summary>
         /// Valor de ataque de Hammer
         /// </summary>
-        private int Attack { get; set; }
+        public int Attack { get; set; }
 
         /// <summary>
         /// Valor de defensa de Hammer
