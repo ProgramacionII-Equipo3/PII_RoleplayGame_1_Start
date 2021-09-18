@@ -1,13 +1,10 @@
 using NUnit.Framework;
-using Library;
 
 namespace Library.Test
 {
-
-
     public class DwarfTest
     {
-
+        //Para verificar que calcula bien el ataque.
         [Test]
         public void TotalAttackTest()
         {
@@ -16,7 +13,7 @@ namespace Library.Test
             Dwarf dwarf1 = new Dwarf ("dwarf1", 20, axe1, shield1);
             Assert.AreEqual(32, dwarf1.TotalAttack());
         }
-
+        //Para verificar que calcula bien la defensa.
         [Test]
         public void TotalDefenseTest()
         {
@@ -25,7 +22,7 @@ namespace Library.Test
             Dwarf dwarf1 = new Dwarf ("dwarf1", 20, axe1, shield1);
             Assert.AreEqual(12, dwarf1.TotalDefense());
         }
-
+        //Test para atacar a otro personaje.
         [Test]
         public void AttackAnotherTest()
         {
@@ -36,7 +33,7 @@ namespace Library.Test
             dwarf2.LoseVit(dwarf1.TotalAttack());
             Assert.AreEqual(80, dwarf2.CurrentVit);
         }
-
+        //Para verificar que se cura correctamente un personaje.
         [Test]
         public void RestoreVitTest()
         {
@@ -48,8 +45,5 @@ namespace Library.Test
             dwarf2.RestoreVit(10);
             Assert.AreEqual(90,dwarf2.CurrentVit);
         }
-
     }
-
-
 }
